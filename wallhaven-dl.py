@@ -1,3 +1,13 @@
+########################################################
+#        Program to Download Wallpapers from           #
+#                  alpha.wallhaven.cc                  #
+#                                                      #
+#                 Author - Saurabh Bhan                #
+#                                                      #
+#                  dated- 26 June 2016                 #
+#                 Update - 29 June 2016                #
+########################################################
+
 import os
 import getpass
 import bs4
@@ -11,8 +21,8 @@ os.makedirs('Wallhaven', exist_ok=True)
 
 def login():
     print('NSFW images require login')
-    username = input('mahalamrit123@gmail.com')
-    password = getpass.getpass('lovenakedwallpapers')
+    username = input('Enter username: ')
+    password = getpass.getpass('Enter password: ')
     req = requests.post('https://alpha.wallhaven.cc/auth/login', data={'username':username, 'password':password})
     return req.cookies
 
