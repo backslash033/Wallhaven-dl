@@ -1,13 +1,3 @@
-########################################################
-#        Program to Download Wallpapers from           #
-#                  alpha.wallhaven.cc                  #
-#                                                      #
-#                 Author - Saurabh Bhan                #
-#                                                      #
-#                  dated- 26 June 2016                 #
-#                 Update - 29 June 2016                #
-########################################################
-
 import os
 import getpass
 import bs4
@@ -21,15 +11,14 @@ os.makedirs('Wallhaven', exist_ok=True)
 
 def login():
     print('NSFW images require login')
-    username = input('Enter username: ')
-    password = getpass.getpass('Enter password: ')
+    username = input('mahalamrit123@gmail.com')
+    password = getpass.getpass('lovenakedwallpapers')
     req = requests.post('https://alpha.wallhaven.cc/auth/login', data={'username':username, 'password':password})
     return req.cookies
 
 def category():
     print('''****************************************************************
                             Category Codes
-
     all     - Every wallpaper.
     general - For 'general' wallpapers only.
     anime   - For 'Anime' Wallpapers only.
@@ -61,7 +50,6 @@ def category():
     print('''
     ****************************************************************
                             Purity Codes
-
     sfw     - For 'Safe For Work'
     sketchy - For 'Sketchy'
     nsfw    - For 'Not Safe For Work'
@@ -98,11 +86,9 @@ def search():
 
 def main():
     Choice = input('''Choose how you want to download the image:
-
     Enter "category" for downloading wallpapers from specified categories
     Enter "latest" for downloading latest wallpapers
     Enter "search" for downloading wallpapers from search
-
     Enter choice: ''').lower()
     while Choice not in ['category', 'latest', 'search']:
         if Choice != None:
@@ -143,7 +129,7 @@ def main():
                                 imageFile.write(chunk)
                         break
                 else:
-                    print("%s already exist - %s / %s" % os.path.basename(iurl), currentImage , totalImage)
+                    print("%s already exist - %s / %s" % ((os.path.basename(iurl)), currentImage , totalImage))
 
 if __name__ == '__main__':
     main()
